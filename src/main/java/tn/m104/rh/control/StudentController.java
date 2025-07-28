@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import tn.m104.rh.entity.Student;
 import tn.m104.rh.service.IStudentService;
-
+// Hello mariem
 @RestController
 @AllArgsConstructor
 @RequestMapping("/student")
