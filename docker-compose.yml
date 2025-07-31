@@ -22,10 +22,18 @@ services:
         "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/school_db?createDatabaseIfNotExist=true",
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "root",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
     stdin_open: true
     tty: true
-
+  app-school-frontend:
+    image: mouradhassini/student-front-image:1.0.0
+    restart: on-failure
+    ports:
+      - 8085:85
+    depends_on:
+      - app-backend 
+    
 volumes:
   db :
